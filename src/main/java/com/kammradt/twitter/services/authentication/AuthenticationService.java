@@ -1,4 +1,4 @@
-package com.kammradt.twitter.services;
+package com.kammradt.twitter.services.authentication;
 
 import com.kammradt.twitter.enums.BotNameEnum;
 
@@ -16,7 +16,7 @@ public class AuthenticationService {
     @Autowired private Environment env;
 
 
-    Twitter authenticate(BotNameEnum name) {
+    public Twitter authenticate(BotNameEnum name) {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         
         cb.setDebugEnabled(false)
@@ -26,9 +26,8 @@ public class AuthenticationService {
                 .setOAuthAccessTokenSecret(env.getProperty("accessTokenSecret." + name));
 
         TwitterFactory tf = new TwitterFactory(cb.build());
-        Twitter twitter = tf.getInstance();
-        
-        return twitter;
+
+        return tf.getInstance();
     }
 
 }
