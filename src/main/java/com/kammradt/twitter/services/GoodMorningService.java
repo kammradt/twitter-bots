@@ -22,8 +22,8 @@ public class GoodMorningService {
     @SneakyThrows
     public void tweetGoodMorningWithEmoji() {
         Twitter twitter = authenticationService.authenticate(BotNameEnum.KAMMZINHO);
-        String text = "Bom dia " + getThreeRandomEmojis();
-        twitter.updateStatus(text);
+        String goodMorningTextWithEmojis = "Bom dia " + getThreeRandomEmojis();
+        twitter.updateStatus(goodMorningTextWithEmojis);
     }
 
     private String getThreeRandomEmojis() {
@@ -31,8 +31,8 @@ public class GoodMorningService {
 
         StringBuilder emojisText = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            Emoji emoji = (Emoji) allEmojis[getRandomNumber(allEmojis.length)];
-            emojisText.append(emoji.getUnicode()).append(" ");
+            Emoji randomEmoji = (Emoji) allEmojis[getRandomNumber(allEmojis.length)];
+            emojisText.append(randomEmoji.getUnicode()).append(" ");
         }
 
         return emojisText.toString();
