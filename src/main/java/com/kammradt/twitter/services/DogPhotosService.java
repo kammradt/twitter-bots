@@ -16,6 +16,7 @@ import twitter4j.Twitter;
 import java.io.InputStream;
 import java.net.URL;
 
+import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;
 import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
 
 @Service
@@ -31,7 +32,6 @@ public class DogPhotosService {
         tweetThatWillBeDone.setMedia("", getInputStreamFromUrl(getDogImageUrl()));
 
         twitter.updateStatus(tweetThatWillBeDone);
-
     }
 
     @SneakyThrows
@@ -43,11 +43,6 @@ public class DogPhotosService {
             throw new Exception("Error getting image of a dog");
 
         return response.getBody().getObject().getString("message");
-    }
-
-    @SneakyThrows
-    private InputStream getInputStreamFromUrl(String url) {
-        return new URL(url).openStream();
     }
 
     private String getTextWithStarsAndDogs() {
