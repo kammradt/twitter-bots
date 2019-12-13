@@ -29,17 +29,19 @@ public class GoodMorningService {
     private String getThreeRandomEmojis() {
         Object[] allEmojis = EmojiManager.getAll().toArray();
 
-        Random randomGenerator = new Random();
         StringBuilder emojisText = new StringBuilder();
         for (int i = 0; i < 3; i++) {
-            int randomNumber = randomGenerator.nextInt(allEmojis.length);
-            Emoji emoji = (Emoji) allEmojis[randomNumber];
-
+            Emoji emoji = (Emoji) allEmojis[getRandomNumber(allEmojis.length)];
             emojisText.append(emoji.getUnicode()).append(" ");
         }
 
         return emojisText.toString();
 
+    }
+
+    private Integer getRandomNumber(Integer range) {
+        Random randomGenerator = new Random();
+        return randomGenerator.nextInt(range);
     }
 
 }
