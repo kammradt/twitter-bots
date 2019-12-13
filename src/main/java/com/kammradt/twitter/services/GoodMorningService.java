@@ -13,6 +13,8 @@ import twitter4j.Twitter;
 
 import java.util.Random;
 
+import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
+
 
 @Service
 public class GoodMorningService {
@@ -36,12 +38,5 @@ public class GoodMorningService {
         }
 
         return emojisText.toString();
-
     }
-
-    private Integer getRandomNumber(Integer range) {
-        Random randomGenerator = new Random();
-        return randomGenerator.nextInt(range);
-    }
-
 }
