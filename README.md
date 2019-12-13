@@ -7,6 +7,14 @@
 
 > The idea is to use Java and Spring to be able to build some funny bots for twitter :)
 
+## Follow it :heavy_heart_exclamation:
+* [GoodMorning messages everyday](https://twitter.com/kammzinho)
+* [Cute :dog: photos](https://twitter.com/botftdecachorro)
+* [Cute :cat: photos](https://twitter.com/botftsdegatinho)
+* [Dolar to BRL with Naruto images](https://twitter.com/dolarcomnaruto)
+* [Dolar to BRL with :penguin: images](https://twitter.com/dolarcompenguin)
+* [Mean Girls pink t-shirt remember](https://twitter.com/diadeusarrosa)
+
 ## Author
 
 👤 **Vinicius Kammradt**
