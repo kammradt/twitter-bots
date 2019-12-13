@@ -17,7 +17,7 @@ public class GoodMorningJob {
     // @Scheduled(cron = "0 8,20 * * *", zone = "GMT-3")
 
 
-    @Scheduled(cron = "0 8 * * *", zone = "GMT-3")
+    @Scheduled(cron = "0 0 8 * * *", zone = "GMT-3")
     public void run() {
         goodMorningService.tweetGoodMorningWithEmoji();
     }
