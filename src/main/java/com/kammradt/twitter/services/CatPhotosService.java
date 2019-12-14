@@ -59,7 +59,7 @@ public class CatPhotosService {
 
         StringBuilder stars = new StringBuilder();
         for (int i = 0; i < range; i++)
-            stars.append(EmojiManager.getForAlias(":dizzy:").getUnicode()).append(" ");
+            stars.append(EmojiManager.getForAlias("dizzy").getUnicode()).append(" ");
 
         StringBuilder cats = new StringBuilder();
         String randomCatEmoji = getRandomCatEmoji();

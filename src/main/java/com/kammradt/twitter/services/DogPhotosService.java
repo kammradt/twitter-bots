@@ -50,11 +50,11 @@ public class DogPhotosService {
 
         StringBuilder stars = new StringBuilder();
         for (int i = 0; i < range; i++)
-            stars.append(EmojiManager.getForAlias(":sparkles:").getUnicode()).append(" ");
+            stars.append(EmojiManager.getForAlias("sparkles").getUnicode()).append(" ");
 
         StringBuilder dogs = new StringBuilder();
         for (int i = 0; i < range + 2; i++)
-            dogs.append(EmojiManager.getForAlias(":dog:").getUnicode()).append(" ");
+            dogs.append(EmojiManager.getForAlias("dog").getUnicode()).append(" ");
 
         return stars.toString() + dogs.toString() + stars.toString();
     }
