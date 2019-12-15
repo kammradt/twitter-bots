@@ -14,8 +14,6 @@ import org.springframework.stereotype.Service;
 import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;

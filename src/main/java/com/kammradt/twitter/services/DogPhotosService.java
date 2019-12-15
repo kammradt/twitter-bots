@@ -2,7 +2,6 @@ package com.kammradt.twitter.services;
 
 import com.kammradt.twitter.enums.BotNameEnum;
 import com.kammradt.twitter.services.authentication.AuthenticationService;
-import com.vdurmont.emoji.Emoji;
 import com.vdurmont.emoji.EmojiManager;
 import kong.unirest.HttpResponse;
 import kong.unirest.JsonNode;
@@ -12,9 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import twitter4j.StatusUpdate;
 import twitter4j.Twitter;
-
-import java.io.InputStream;
-import java.net.URL;
 
 import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;
 import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
