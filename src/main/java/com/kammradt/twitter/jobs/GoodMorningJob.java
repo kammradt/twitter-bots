@@ -11,7 +11,7 @@ public class GoodMorningJob {
     @Autowired private GoodMorningService goodMorningService;
 
     // Every day at 8:00 A.M.
-    @Scheduled(cron = "0 0 8 * * *", zone = "GMT-3")
+    @Scheduled(cron = "0 0 11 * * *")
     public void run() {
         goodMorningService.tweetGoodMorningWithEmoji();
     }

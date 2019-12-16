@@ -11,7 +11,7 @@
     <groupId>com.kammradt</groupId>
     <artifactId>twitter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>twitter</name>
     <description>Bots for twitter using Java :)</description>
 
