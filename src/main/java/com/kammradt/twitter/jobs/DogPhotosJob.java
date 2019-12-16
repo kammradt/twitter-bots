@@ -12,7 +12,7 @@ public class DogPhotosJob {
     @Autowired private DogPhotosService dogPhotosService;
 
     // Every 4 hours
-    @Scheduled(fixedRate=14400000)
+    @Scheduled(cron = "0 0 */4 * * *", zone = "GMT-3")
     public void run() {
         dogPhotosService.tweetDogPhoto();
     }
