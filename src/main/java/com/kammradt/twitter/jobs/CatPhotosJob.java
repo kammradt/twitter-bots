@@ -11,7 +11,7 @@ public class CatPhotosJob {
 
     @Autowired private CatPhotosService catPhotosService;
 
-    // Every 4 hours
+    // Every 3 hours
     @Scheduled(cron = "0 0 */3 * * *")
     public void run() {
         catPhotosService.tweetCatPhoto();
