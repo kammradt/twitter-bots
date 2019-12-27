@@ -46,13 +46,21 @@ public class DogPhotosService {
 
         StringBuilder stars = new StringBuilder();
         for (int i = 0; i < range; i++)
-            stars.append(EmojiManager.getForAlias("sparkles").getUnicode()).append(" ");
+            stars.append(getSparklesEmoji()).append(" ");
 
         StringBuilder dogs = new StringBuilder();
         for (int i = 0; i < range + 2; i++)
-            dogs.append(EmojiManager.getForAlias("dog").getUnicode()).append(" ");
+            dogs.append(getDogEmoji()).append(" ");
 
         return stars.toString() + dogs.toString() + stars.toString();
+    }
+
+    private String getSparklesEmoji() {
+        return EmojiManager.getForAlias("sparkles").getUnicode();
+    }
+
+    private String getDogEmoji() {
+        return EmojiManager.getForAlias("dog").getUnicode();
     }
 
 }

@@ -17,6 +17,7 @@ import twitter4j.Twitter;
 import java.util.List;
 
 import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;
+import static com.kammradt.twitter.utils.RandomUtils.getRandomEmoji;
 import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
 
 @Service
@@ -57,19 +58,22 @@ public class CatPhotosService {
 
         StringBuilder stars = new StringBuilder();
         for (int i = 0; i < range; i++)
-            stars.append(EmojiManager.getForAlias("dizzy").getUnicode()).append(" ");
+            stars.append(getStarEmoji()).append(" ");
 
         StringBuilder cats = new StringBuilder();
-        String randomCatEmoji = getRandomCatEmoji();
         for (int i = 0; i < range + 2; i++)
-            cats.append(EmojiManager.getForAlias(randomCatEmoji).getUnicode()).append(" ");
+            cats.append(getRandomCatEmoji()).append(" ");
 
         return stars.toString() + cats.toString() + stars.toString();
     }
 
     private String getRandomCatEmoji() {
-        List<String> cats = List.of("smiley_cat", "smile_cat", "heart_eyes_cat", "kissing_cat", "smirk_cat", "scream_cat", "crying_cat_face", "joy_cat", "pouting_cat");
-        return cats.get(getRandomNumber(cats.size()));
+        List<String> catsOptions = List.of("smiley_cat", "smile_cat", "heart_eyes_cat", "kissing_cat", "smirk_cat", "scream_cat", "crying_cat_face", "joy_cat", "pouting_cat");
+        return getRandomEmoji(catsOptions);
+    }
+
+    private String getStarEmoji() {
+        return EmojiManager.getForAlias("dizzy").getUnicode();
     }
 
 

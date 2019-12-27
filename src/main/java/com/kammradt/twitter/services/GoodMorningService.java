@@ -11,7 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import twitter4j.Twitter;
 
-import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.kammradt.twitter.utils.RandomUtils.getRandomEmoji;
 
 
 @Service
@@ -27,13 +30,14 @@ public class GoodMorningService {
     }
 
     private String getThreeRandomEmojis() {
-        Object[] allEmojis = EmojiManager.getAll().toArray();
+        List<String> allEmojis = EmojiManager.getAll()
+                .stream()
+                .map(Emoji::getUnicode)
+                .collect(Collectors.toList());
 
         StringBuilder emojisText = new StringBuilder();
-        for (int i = 0; i < 3; i++) {
-            Emoji randomEmoji = (Emoji) allEmojis[getRandomNumber(allEmojis.length)];
-            emojisText.append(randomEmoji.getUnicode()).append(" ");
-        }
+        for (int i = 0; i < 3; i++)
+            emojisText.append(getRandomEmoji(allEmojis)).append(" ");
 
         return emojisText.toString();
     }

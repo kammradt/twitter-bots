@@ -19,7 +19,7 @@ import twitter4j.Twitter;
 import java.util.List;
 
 import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;
-import static com.kammradt.twitter.utils.RandomUtils.getRandomNumber;
+import static com.kammradt.twitter.utils.RandomUtils.getRandomEmoji;
 
 @Service
 public class NarutoWithDollarService {
@@ -42,21 +42,15 @@ public class NarutoWithDollarService {
         DollarDTO dollarInformation = getDollarInformation();
 
         return new StringBuilder()
-                .append(getRandomEmoji()).append(" ").append("Personagem do dia: ").append(narutoCharacter.getName()).append("\n")
+                .append(getRandomNarutoEmoji()).append(" ").append("Personagem do dia: ").append(narutoCharacter.getName()).append("\n")
                 .append(getDollarEmoji()).append(" ").append("Valor de compra: ").append(dollarInformation.getBuy()).append("\n")
                 .append(getDollarFlyingEmoji()).append(" ").append("Valor de venda: ").append(dollarInformation.getSell()).append("\n")
                 .append(getVariationEmoji()).append(" ").append("Variação: ").append(dollarInformation.getVariation()).append("\n").toString();
     }
 
-    private NarutoCharacter getRandomNarutoCharacter() {
-        int randomId = getRandomNumber(narutoCharacterService.count() + 1);
-        return narutoCharacterService.findById((long) randomId);
-    }
-
-    private String getRandomEmoji() {
-        List<String> possibleEmojis = List.of("crossed_swords", "knife", "dagger", "shield");
-        String emojiAlias = possibleEmojis.get(getRandomNumber(possibleEmojis.size()));
-        return EmojiManager.getForAlias(emojiAlias).getUnicode();
+    private String getRandomNarutoEmoji() {
+        List<String> narutoOptions = List.of("crossed_swords", "knife", "dagger", "shield");
+        return getRandomEmoji(narutoOptions);
     }
 
     private String getDollarEmoji() {
