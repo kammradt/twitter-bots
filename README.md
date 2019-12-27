@@ -11,7 +11,8 @@
 * [x] [GoodMorning messages everyday](https://twitter.com/kammzinho)
 * [x] [Cute :dog: photos](https://twitter.com/botftdecachorro)
 * [x] [Cute :cat: photos](https://twitter.com/botftsdegatinho)
-* [ ] [Dolar to BRL with Naruto images](https://twitter.com/dolarcomnaruto)
+* [X] [Dolar to BRL with Naruto images](https://twitter.com/dolarcomnaruto)
+  * I learned about puppeteer to create this one, you can see the project [here, the Puppeteer Naruto Scraper](https://github.com/kammradt/puppeteer-naruto-scraper) 
 * [ ] [Dolar to BRL with :penguin: images](https://twitter.com/dolarcompenguin)
 * [ ] [Mean Girls pink t-shirt remember](https://twitter.com/diadeusarrosa)
 
