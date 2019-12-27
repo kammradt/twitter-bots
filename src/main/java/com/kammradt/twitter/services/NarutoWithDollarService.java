@@ -79,13 +79,10 @@ public class NarutoWithDollarService {
                 .getJSONObject("USD");
 
         return new DollarDTO(
-                dollarJson.getString("buy").substring(0, 4),
-                dollarJson.getString("sell").substring(0, 4),
-                dollarJson.getString("variation").substring(0,
-                        dollarJson.getDouble("variation") < 0 ? 5 : 4)
+                dollarJson.getString("buy"),
+                dollarJson.getString("sell"),
+                dollarJson.getString("variation")
         );
-
-
     }
 
 }
