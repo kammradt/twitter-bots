@@ -1,6 +1,6 @@
 package com.kammradt.twitter.services.databaseAccess;
 
-import com.kammradt.twitter.domain.NarutoCharacter;
+import com.kammradt.twitter.domain.naruto.NarutoCharacter;
 import com.kammradt.twitter.exception.NotFoundException;
 import com.kammradt.twitter.repository.NarutoCharacterRepository;
 import org.springframework.beans.factory.annotation.Autowired;

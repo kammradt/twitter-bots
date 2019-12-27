@@ -1,4 +1,4 @@
-package com.kammradt.twitter.domain;
+package com.kammradt.twitter.domain.naruto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
