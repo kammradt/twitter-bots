@@ -32,7 +32,7 @@ public class GoodMorningService {
     private String getThreeRandomEmojis() {
         List<String> allEmojis = EmojiManager.getAll()
                 .stream()
-                .map(Emoji::getUnicode)
+                .map(emoji -> emoji.getAliases().get(0))
                 .collect(Collectors.toList());
 
         StringBuilder emojisText = new StringBuilder();
