@@ -31,7 +31,7 @@ public class NarutoWithDollarService {
     public void tweetNarutoImageWithDollar() {
         Twitter twitter = authenticationService.authenticate(BotNameEnum.DOLARCOMNARUTO);
 
-        NarutoCharacter randomNarutoCharacter = getRandomNarutoCharacter();
+        NarutoCharacter randomNarutoCharacter = narutoCharacterService.getRandomNarutoCharacter();
         StatusUpdate tweetThatWillBeDone = new StatusUpdate(getText(randomNarutoCharacter));
         tweetThatWillBeDone.setMedia("", getInputStreamFromUrl(randomNarutoCharacter.getImageUrl()));
 
