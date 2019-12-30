@@ -14,7 +14,9 @@
 * [X] [Dolar to BRL with Naruto images](https://twitter.com/dolarcomnaruto)
   * I learned about puppeteer to create this one, you can see the project [here, the Puppeteer Naruto Scraper](https://github.com/kammradt/puppeteer-naruto-scraper) 
 * [ ] [Dolar to BRL with :penguin: images](https://twitter.com/dolarcompenguin)
-* [ ] [Mean Girls pink t-shirt remember](https://twitter.com/diadeusarrosa)
+* [X] [Mean Girls pink t-shirt remember](https://twitter.com/diadeusarrosa)
+  * I create another scaper, you can see the project [here, to get images of Mean Grils movie](https://github.com/kammradt/puppeteer-mean-girls-scraper) 
+
 
 ## Author
 
