@@ -29,7 +29,15 @@ public class MeanGirlsWednesdayService {
 
     @SneakyThrows
     public void tweetMeanGirlsWithImage() {
+        Twitter twitter = authenticationService.authenticate(BotNameEnum.DIADEUSARROSA);
+
         String text = isWendsday() ? getWendsdayText() : getRegularText();
+        MeanGirl meanGirl = meanGirlService.getRandomMeanGirl();
+
+        StatusUpdate tweetThatWillBeDone = new StatusUpdate(text);
+        tweetThatWillBeDone.setMedia("", getInputStreamFromUrl(meanGirl.getImageUrl()));
+
+        twitter.updateStatus(tweetThatWillBeDone);
     }
 
     private String getRegularText() {
