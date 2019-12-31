@@ -30,4 +30,8 @@ public class NarutoCharacterService {
         return narutoCharacterRepository.count();
     }
 
+    public NarutoCharacter save(NarutoCharacter narutoCharacter) {
+        return narutoCharacterRepository.save(narutoCharacter);
+    }
+
 }
