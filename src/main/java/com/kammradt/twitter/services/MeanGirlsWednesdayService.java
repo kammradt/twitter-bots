@@ -49,11 +49,11 @@ public class MeanGirlsWednesdayService {
         StringBuilder firstLine = getFirstLineOfEmojis();
 
         return new StringBuilder()
-            .append(firstLine.toString())
-            .append(firstLineText)
-            .append(firstLine.reverse().toString())
-            .append("\n")
-            .toString();
+                .append(firstLine)
+                .append(firstLineText)
+                .append(firstLine.reverse())
+                .append("\n")
+                .toString();
     }
 
     private StringBuilder getFirstLineOfEmojis() {
@@ -70,9 +70,9 @@ public class MeanGirlsWednesdayService {
         String secondLineText = "\uD835\uDE3F\uD835\uDE40 \uD835\uDE50\uD835\uDE4E\uD835\uDE3C\uD835\uDE4D \uD835\uDE4D\uD835\uDE4A\uD835\uDE4E\uD835\uDE3C";
         StringBuilder secondLine = getSecondLineOfEmojis();
         return new StringBuilder()
-                .append(secondLine.toString())
+                .append(secondLine)
                 .append(secondLineText)
-                .append(secondLine.reverse().toString())
+                .append(secondLine.reverse())
                 .append("\n")
                 .toString();
     }
