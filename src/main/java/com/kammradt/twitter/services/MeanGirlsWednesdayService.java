@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 
 import static com.kammradt.twitter.utils.FileUtils.getInputStreamFromUrl;
+import static com.kammradt.twitter.utils.RandomUtils.getRandomEmoji;
 
 @Service
 public class MeanGirlsWednesdayService {
@@ -25,13 +26,37 @@ public class MeanGirlsWednesdayService {
     @Autowired private AuthenticationService authenticationService;
     @Autowired private MeanGirlService meanGirlService;
 
+
     @SneakyThrows
     public void tweetMeanGirlsWithImage() {
         String text = isWendsday() ? getWendsdayText() : getRegularText();
     }
 
     private String getRegularText() {
-        return "Needs to be done";
+        StringBuilder sadEmojis = getSadEmojis();
+        String regular = sadEmojis.toString();
+        String reversed = sadEmojis.reverse().toString();
+        return (regular + "Não é quarta-feira" + reversed + "\n").repeat(7);
+    }
+
+    private StringBuilder getSadEmojis() {
+        List<String> SAD_EMOJIS = List.of(
+                "pensive", "cold_sweat", "dizzy_face",
+                "worried", "anguished", "droplet",
+                "injured", "pleading_face", "sweat",
+                "persevere", "unamused", "sleepy",
+                "tired_face", "scream", "confounded",
+                "disappointed", "cry", "sob", "disappointed_relieved",
+                "weary", "fearful", "sleeping", "sick",
+                "crying_cat_face", "sweat_drops", "nauseated_face",
+                "thumbsdown", "slightly_frowning", "frowning_face"
+        );
+
+        StringBuilder sadEmojisText = new StringBuilder();
+        for (int i = 0; i < 5; i++)
+            sadEmojisText.append(getRandomEmoji(SAD_EMOJIS));
+
+        return sadEmojisText;
     }
 
     private String getWendsdayText() {
