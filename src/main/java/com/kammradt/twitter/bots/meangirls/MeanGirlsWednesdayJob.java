@@ -13,7 +13,7 @@ public class MeanGirlsWednesdayJob {
     // Every day at 8:00 A.M.
     @Scheduled(cron = "0 0 11 * * *")
     void run() {
-        // meanGirlsWednesdayService.tweetMeanGirlsWithImage();
+        meanGirlsWednesdayService.tweetMeanGirlsWithImage();
     }
 
 }

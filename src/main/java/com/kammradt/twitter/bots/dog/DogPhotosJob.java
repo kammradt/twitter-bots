@@ -13,7 +13,7 @@ public class DogPhotosJob {
     // Every 3 hours
     @Scheduled(cron = "0 0 */3 * * *")
     public void run() {
-        // dogPhotosService.tweetDogPhoto();
+        dogPhotosService.tweetDogPhoto();
     }
 
 }

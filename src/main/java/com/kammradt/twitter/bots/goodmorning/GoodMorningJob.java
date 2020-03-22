@@ -13,6 +13,6 @@ public class GoodMorningJob {
     // Every day at 8:00 A.M.
     @Scheduled(cron = "0 0 11 * * *")
     public void run() {
-        // goodMorningService.tweetGoodMorningWithEmoji();
+        goodMorningService.tweetGoodMorningWithEmoji();
     }
 }
