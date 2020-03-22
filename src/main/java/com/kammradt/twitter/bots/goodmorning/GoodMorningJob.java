@@ -15,4 +15,5 @@ public class GoodMorningJob {
     public void run() {
         goodMorningService.tweetGoodMorningWithEmoji();
     }
+    
 }
