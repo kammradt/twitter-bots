@@ -1,9 +1,10 @@
 package com.kammradt.twitter;
 
-import com.kammradt.twitter.domain.girls.MeanGirl;
-import com.kammradt.twitter.domain.naruto.NarutoCharacter;
-import com.kammradt.twitter.services.databaseAccess.MeanGirlService;
-import com.kammradt.twitter.services.databaseAccess.NarutoCharacterService;
+import com.kammradt.twitter.bots.meangirls.MeanGirl;
+import com.kammradt.twitter.bots.meangirls.MeanGirlService;
+import com.kammradt.twitter.bots.naruto.NarutoCharacter;
+import com.kammradt.twitter.bots.naruto.NarutoCharacterService;
+import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,8 +21,12 @@ public class DataLoader {
 
     @Autowired NarutoCharacterService narutoCharacterService;
     @Autowired MeanGirlService meanGirlService;
-    @Value("classpath:naruto.json") Resource narutoJsonFile;
-    @Value("classpath:girls.json") Resource girlsJsonFile;
+
+    @Value("classpath:naruto.json")
+    Resource narutoJsonFile;
+
+    @Value("classpath:girls.json")
+    Resource girlsJsonFile;
 
     @PostConstruct
     public void loadData() {
